@@ -2,7 +2,6 @@
   "name": "react-para",
   "version": "1.0.0",
   "private": true,
-  "homepage": ".",
   "dependencies": {
     "husky": "^3.0.3",
     "lint-staged": "^9.2.1",
