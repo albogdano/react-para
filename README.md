@@ -5,7 +5,7 @@
 [![Join the chat at https://gitter.im/Erudika/para](https://badges.gitter.im/Erudika/para.svg)](https://gitter.im/Erudika/para?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 This is an example application for managing recipes, built with React and Para.
-It is part of a tutorial on [how to get started quickly with React](http://www.erudika.com/blog/2019/08/14/Building-a-full-stack-application-from-scratch-with-React/) 
+It is part of a tutorial on [how to get started quickly with React](https://www.erudika.com/blog/2019/08/14/Building-a-full-stack-application-from-scratch-with-React/) 
 and how to integrate your React frontend with a Para backend.
 It's a simple recipe manager app with:
 

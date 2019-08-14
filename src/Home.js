@@ -13,7 +13,6 @@ export default class Home extends React.Component {
             editedRecipes: {}
         };
         this.search = this.search.bind(this);
-        this.recipeInfo = this.recipeInfo.bind(this);
         this.RecipeItem = this.RecipeItem.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
     }
@@ -85,10 +84,6 @@ export default class Home extends React.Component {
             let props = this.state.editedRecipes;
             props[recipeId] = false;
             this.setState({ editedRecipes: props });
-        } else if (this.state.createMode) {
-            let recipes = Array.of(this.state.recipesList);
-            recipes.shift();
-            this.setState({createMode: false, recipesList: recipes});
         }
     }
 
@@ -120,33 +115,27 @@ export default class Home extends React.Component {
         return { __html: this.md2html(text) };
     }
 
-    recipeInfo(recipe) {
-        if (!this.state.editedRecipes[recipe.id] && !(!recipe.id && this.state.createMode)) {
-            return <div>
-                <h3>{recipe.name}</h3>
-                <hr />
-                <div dangerouslySetInnerHTML={this.renderMD(recipe.text)} />
-                <br />
-                <button onClick={(e) => this.editRecipe(recipe)}>edit</button> &nbsp;
-                <a href="/" onClick={(e) => {this.removeRecipe(recipe.id); e.preventDefault()}} className="red right">remove</a>
-            </div>
-        }
-    }
-
     RecipeItem(props) {
         let recipe = props.recipe;
-
+        let index = props.index;
         return (
             <li className="recipe-box">
-                {this.recipeInfo(recipe)}
+                <div className={(this.state.editedRecipes[recipe.id] || (!recipe.id && this.state.createMode)) ? "hide" : ""}>
+                    <h3>{recipe.name}</h3>
+                    <hr />
+                    <div dangerouslySetInnerHTML={this.renderMD(recipe.text)} />
+                    <br />
+                    <button onClick={(e) => this.editRecipe(recipe)}>edit</button> &nbsp;
+                <a href="/" onClick={(e) => { this.removeRecipe(recipe.id); e.preventDefault() }} className="red right">remove</a>
+                </div>
                 <div>
                     <form onSubmit={(e) => { this.addRecipe(recipe); e.preventDefault() }} className={((recipe.id || !this.state.createMode) && !this.state.editedRecipes[recipe.id]) ? "hide" : ""}>
                         <div>
-                            <input type="text" value={recipe.name} onChange={(e) => this.handleInputChange(e, recipe, props.index)} placeholder="Title" name="name" />
+                            <input type="text" value={recipe.name} onChange={(e) => this.handleInputChange(e, recipe, index)} placeholder="Title" name="name" />
                         </div>
                         <br />
                         <div>
-                            <textarea value={recipe.text} onChange={(e) => this.handleInputChange(e, recipe, props.index)} rows="10" cols="33" placeholder="Recipe" name="text"></textarea>
+                            <textarea value={recipe.text} onChange={(e) => this.handleInputChange(e, recipe, index)} rows="10" cols="33" placeholder="Recipe" name="text"></textarea>
                         </div>
                         <button type="submit">
                             <span>{this.state.createMode ? "Add" : "Save"}</span>
