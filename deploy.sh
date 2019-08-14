@@ -1,8 +1,8 @@
 #!/bin/bash
 
 rm -rf docs
-npm run build
 sed -i -e "s/\"homepage\": \"\\.\"/\"homepage\": \"https:\\/\\/albogdano\\.github\\.io\\/react-para\"/g" package.json
+npm run build
 sed -i -e "s/\"start_url\": \"\\.\"/\"start_url\": \"\\/react-para\\/\"/g" build/manifest.json
 mv build docs
 sed -i -e "s/\"homepage\": .*$/\"homepage\": \"\\.\",/g" package.json
