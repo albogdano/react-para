@@ -5,7 +5,6 @@ import About from './About';
 import Home from './Home';
 
 function App() {
-    let base = process.env.BASE_HREF || "/";
     return (
         <div>
             <div className="App">
@@ -15,7 +14,7 @@ function App() {
                 </header>
             </div>
             <div>
-                <BrowserRouter basename={base}>
+                <BrowserRouter basename={process.env.NODE_ENV === "production" ? "/react-para" : "/"}>
                     <nav>
                         <NavLink to="/" exact activeClassName="router-link-active" >Home</NavLink>
                         <NavLink to="/about" activeClassName="router-link-active">About</NavLink>
