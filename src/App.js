@@ -14,7 +14,7 @@ function App() {
                 </header>
             </div>
             <div>
-                <BrowserRouter basename={process.env.NODE_ENV === "production" ? "/react-para" : ""}>
+                <BrowserRouter basename={process.env.NODE_ENV === "production" ? "/react-para" : "/"}>
                     <nav>
                         <NavLink to="/" exact activeClassName="router-link-active" >Home</NavLink>
                         <NavLink to="/about" activeClassName="router-link-active">About</NavLink>
