@@ -165,14 +165,14 @@ h1 {
     letter-spacing: 0.1px;
     line-height: 48px;
 }
-
+/* 
 .more {
     background: url("./more.svg");
     float: right;
     height: 24px;
     margin-top: 12px;
     width: 24px;
-}
+} */
 
 nav {
     border-color: #e1e1e1;
