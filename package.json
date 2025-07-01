@@ -10,7 +10,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-router-dom": "^5.3.4",
-    "react-scripts": "3.1.0",
+    "react-scripts": "3.4.4",
     "showdown": "^1.9.1"
   },
   "scripts": {
