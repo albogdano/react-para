@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "version": "1.0.1",
+  "homepage": ".",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
