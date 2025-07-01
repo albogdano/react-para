@@ -4,14 +4,14 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
-    "husky": "^3.1.0",
-    "lint-staged": "^9.5.0",
-    "prettier": "^1.19.1",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-router-dom": "^5.3.4",
-    "react-scripts": "3.1.0",
-    "showdown": "^1.9.1"
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.6.3",
+    "react-scripts": "5.0.1",
+    "showdown": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
