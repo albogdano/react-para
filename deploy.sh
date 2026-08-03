@@ -5,6 +5,7 @@ sed -i -e "s/\"homepage\": \"\\.\"/\"homepage\": \"https:\\/\\/albogdano\\.githu
 npm run build
 sed -i -e "s/\"start_url\": \"\\.\"/\"start_url\": \"\\/react-para\\/\"/g" build/client/manifest.json
 mv build/client docs
+cp docs/index.html docs/404.html
 sed -i -e "s/\"homepage\": .*$/\"homepage\": \"\\.\",/g" package.json
 git add -A && git commit -am "updated demo" && git push -f origin master
 echo "-- done --"
